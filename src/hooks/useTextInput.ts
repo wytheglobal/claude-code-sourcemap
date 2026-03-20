@@ -128,7 +128,11 @@ export function useTextInput({
       return cursor
     }
     // When input is not empty, delete forward like iPython
-    return cursor.del()
+    return deleteAtCursor()
+  }
+
+  function deleteAtCursor(): Cursor {
+    return cursor.offset === cursor.text.length ? cursor.backspace() : cursor.del()
   }
 
   function tryImagePaste() {
@@ -226,7 +230,7 @@ export function useTextInput({
           ? () => cursor.deleteWordBefore()
           : () => cursor.backspace()
       case key.delete:
-        return key.meta ? () => cursor.deleteToLineEnd() : () => cursor.del()
+        return key.meta ? () => cursor.deleteToLineEnd() : () => deleteAtCursor()
       case key.ctrl:
         return handleCtrl
       case key.home:

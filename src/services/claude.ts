@@ -97,6 +97,15 @@ function shouldRetry(error: APIError): boolean {
   if (shouldRetryHeader === 'false') return false
 
   if (error instanceof APIConnectionError) {
+    try {
+      const err = JSON.parse(error?.message)
+      // out of quota, don't retry
+      if (err.error.code === '1309') {
+        return false
+      }
+    } catch (e) {
+    }
+
     return true
   }
 
