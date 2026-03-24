@@ -10,6 +10,10 @@
       "request": "launch",
       // Debug current file in VSCode
       "program": "${workspaceFolder}/src/entrypoints/cli.tsx",
+      "runtimeArgs": [
+        "--import",
+        "${workspaceFolder}/src/entrypoints/shim.ts"
+      ],
       /*
      * Path to tsx binary
      * Assuming locally installed
@@ -28,6 +32,47 @@
         // Ignore all dependencies (optional)
         "${workspaceFolder}/node_modules/**",
       ],
+      "env": {
+        "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+        "ANTHROPIC_AUTH_TOKEN": "b45482ec86124fa09235cfccd7a277ff.38mUmg8GV2qjmhDv",
+        "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.7",
+        "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-4.7",
+        "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.7",
+        "ANTHROPIC_MODEL": "glm-4.7"
+      }
+    },
+    {
+      "name": "Tools",
+      "type": "node",
+      "request": "launch",
+      // Debug current file in VSCode
+      "program": "${workspaceFolder}/test/edit.tsx",
+      /*
+     * Path to tsx binary
+     * Assuming locally installed
+     */
+      "runtimeExecutable": "tsx",
+      /*
+     * Open terminal when debugging starts (Optional)
+     * Useful to see console.logs
+     */
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      // Files to exclude from debugger (e.g. call stack)
+      "skipFiles": [
+        // Node.js internal core modules
+        "<node_internals>/**",
+        // Ignore all dependencies (optional)
+        "${workspaceFolder}/node_modules/**",
+      ],
+      "env": {
+        "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+        "ANTHROPIC_AUTH_TOKEN": "b45482ec86124fa09235cfccd7a277ff.38mUmg8GV2qjmhDv",
+        "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.7",
+        "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-4.7",
+        "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.7",
+        "ANTHROPIC_MODEL": "glm-4.7"
+      }
     }
   ]
 }
