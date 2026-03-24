@@ -6,7 +6,10 @@ import { z } from 'zod'
 import { FallbackToolUseRejectedMessage } from '../../components/FallbackToolUseRejectedMessage.js'
 import { Tool } from '../../Tool.js'
 import { MEMORY_DIR } from '../../utils/env.js'
-import { DESCRIPTION, PROMPT } from './prompt.js'
+// import { DESCRIPTION, PROMPT } from './prompt.js'
+// TODO
+const DESCRIPTION = '__hooked Read memory files'
+const PROMPT = '__hooked Read memory files'
 
 const inputSchema = z.strictObject({
   file_path: z

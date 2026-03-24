@@ -6,7 +6,10 @@ import { z } from 'zod'
 import { FallbackToolUseRejectedMessage } from '../../components/FallbackToolUseRejectedMessage.js'
 import { Tool } from '../../Tool.js'
 import { MEMORY_DIR } from '../../utils/env.js'
-import { DESCRIPTION, PROMPT } from './prompt.js'
+// import { DESCRIPTION, PROMPT } from './prompt.js'
+// TODO
+const DESCRIPTION = '__hooked Write memory files'
+const PROMPT = '__hooked Write memory files'
 
 const inputSchema = z.strictObject({
   file_path: z.string().describe('Path to the memory file to write'),

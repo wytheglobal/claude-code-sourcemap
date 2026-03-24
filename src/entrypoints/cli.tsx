@@ -49,7 +49,9 @@ import { getCwd, setCwd } from '../utils/state.js'
 import { omit } from 'lodash-es'
 import { getCommands } from '../commands.js'
 import { getNextAvailableLogForkNumber, loadLogList } from '../utils/log.js'
-import { loadMessagesFromLog } from '../utils/conversationRecovery.js'
+// import { loadMessagesFromLog } from '../utils/conversationRecovery.js'
+// TODO
+const loadMessagesFromLog = () => {}
 import { cleanupOldMessageFilesInBackground } from '../utils/cleanup.js'
 import {
   handleListApprovedTools,
@@ -343,7 +345,7 @@ ${commandList}`,
       'Override verbose mode setting from config',
       () => true,
     )
-    .option('-ea, --enable-architect', 'Enable the Architect tool', () => true)
+    .option('--ea, --enable-architect', 'Enable the Architect tool', () => true)
     .option(
       '-p, --print',
       'Print response and exit (useful for pipes)',
@@ -819,10 +821,10 @@ ${commandList}`,
       )
       .option('-c, --cwd <cwd>', 'The current working directory', String, cwd())
       .option(
-        '-ea, --enable-architect',
+        '--ea, --enable-architect',
         'Enable the Architect tool',
         () => true,
-      )
+      )      
       .option('-v, --verbose', 'Do not truncate message output', () => true)
       .option(
         '--dangerously-skip-permissions',

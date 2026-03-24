@@ -1,6 +1,6 @@
 import { Box, Text, useInput } from 'ink'
 import React from 'react'
-import { Select } from './CustomSelect/index.js'
+import { Select } from './CustomSelect/select.js'
 import { getTheme } from '../utils/theme.js'
 import Link from './Link.js'
 

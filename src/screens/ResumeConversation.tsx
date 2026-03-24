@@ -1,7 +1,9 @@
 import React from 'react'
 import { render } from 'ink'
 import { REPL } from './REPL.js'
-import { deserializeMessages } from '../utils/conversationRecovery.js'
+// import { deserializeMessages } from '../utils/conversationRecovery.js'
+// TODO
+const deserializeMessages = () => {}
 import { LogSelector } from '../components/LogSelector.js'
 import type { LogOption } from '../types/logs.js'
 import { logError, getNextAvailableLogForkNumber } from '../utils/log.js'
